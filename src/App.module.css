@@ -1,0 +1,135 @@
+.mainContainer {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-family: 'Trebuchet MS', sans-serif;
+  }
+  
+  .title {
+    text-align: center;
+    color: #d84315;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    animation: fadeInDown 0.8s ease-out;
+  }
+  
+  .logo {
+    font-size: 3rem;
+    display: block;
+    text-align: center;
+    margin-bottom: 1rem;
+    animation: bounce 2s infinite;
+  }
+  
+  /* Animaciones */
+  @keyframes fadeInDown {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes bounce {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+  
+  /* Media queries para responsividad */
+  @media (max-width: 768px) {
+    .mainContainer {
+      padding: 1rem;
+    }
+  
+    .title {
+      font-size: 2rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .title {
+      font-size: 1.5rem;
+    }
+  }
+  
+  /* Estilo para decoraciones de fondo */
+  .backgroundDecorations {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+  }
+  
+  .decoration {
+    position: absolute;
+    opacity: 0.1;
+    font-size: 2rem;
+  }
+  
+  .decoration:nth-child(1) {
+    top: 10%;
+    left: 10%;
+    animation: float 6s infinite;
+  }
+  
+  .decoration:nth-child(2) {
+    top: 20%;
+    right: 15%;
+    animation: float 8s infinite;
+  }
+  
+  .decoration:nth-child(3) {
+    bottom: 15%;
+    left: 20%;
+    animation: float 7s infinite;
+  }
+  
+  .decoration:nth-child(4) {
+    bottom: 20%;
+    right: 10%;
+    animation: float 5s infinite;
+  }
+  
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0) rotate(0);
+    }
+    50% {
+      transform: translateY(-20px) rotate(10deg);
+    }
+  }
+  
+  /* Contenedor del contenido principal */
+  .contentContainer {
+    position: relative;
+    z-index: 1;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+  }
+  
+  /* Estilos para tema oscuro si el sistema lo tiene activado */
+  @media (prefers-color-scheme: dark) {
+    .mainContainer {
+      background: linear-gradient(135deg, #8b0000 0%, #662424 100%);
+    }
+  
+    .title {
+      color: #ffa07a;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    }
+  }
